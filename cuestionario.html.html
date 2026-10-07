@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Soporte Técnico</title>
+    <!-- CSS MÍNIMO -->
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #1b365d; color: white; text-align: center; padding: 15px; }
+        nav { background-color: #0d213a; padding: 10px; text-align: center; }
+        nav a { color: white; text-decoration: none; margin: 0 15px; font-weight: bold; }
+        nav a:hover { text-decoration: underline; }
+        main { max-width: 900px; margin: 20px auto; padding: 20px; background: white; border: 1px solid #ccc; }
+        footer { background-color: #1b365d; color: white; text-align: center; padding: 10px; margin-top: 20px; }
+        fieldset { margin-bottom: 15px; padding: 15px; border: 1px solid #bbb; }
+        legend { font-weight: bold; color: #1b365d; }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        input[type="text"], input[type="email"], select, textarea { width: 100%; padding: 6px; margin-top: 5px; box-sizing: border-box; }
+        .opcion { font-weight: normal; margin-top: 5px; }
+        .botones { margin-top: 15px; }
+        button { padding: 8px 16px; background-color: #1b365d; color: white; border: none; cursor: pointer; }
+        button[type="reset"] { background-color: #777; }
+    </style>
+</head>
+<body>
+
+    <!-- 1. ENCABEZADO -->
+    <header>
+        <h1>Soporte Técnico de Equipo de Cómputo</h1>
+        <p>Cuestionario de Diagnóstico y Registro de Solicitud</p>
+    </header>
+
+    <!-- 2. BARRA DE NAVEGACIÓN -->
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#equipos">Computadoras Disponibles</a>
+        <a href="cuestionario.html">Cuestionario de Soporte</a>
+    </nav>
+
+    <!-- 3. CUERPO / FORMULARIO -->
+    <main>
+        <h2>Cuestionario de Diagnóstico para Soporte Técnico</h2>
+        <p>Por favor, completa los siguientes datos para evaluar el estado de tu equipo de cómputo antes de entregarlo a revisión.</p>
+
+        <form action="#" method="post">
+
+            <!-- SECCIÓN 1: DATOS DEL USUARIO -->
+            <fieldset>
+                <legend>1. Datos del Cliente</legend>
+
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" placeholder="correo@ejemplo.com" required>
+
+                <label for="telefono">Número Telefónico:</label>
+                <input type="text" id="telefono" name="telefono" placeholder="10 dígitos">
+            </fieldset>
+
+            <!-- SECCIÓN 2: DATOS DEL EQUIPO -->
+            <fieldset>
+                <legend>2. Información del Equipo</legend>
+
+                <label for="tipo_equipo">Tipo de Equipo:</label>
+                <select id="tipo_equipo" name="tipo_equipo" required>
+                    <option value="">-- Seleccione una opción --</option>
+                    <option value="Laptop">Laptop / Portátil</option>
+                    <option value="Escritorio">PC de Escritorio</option>
+                    <option value="AllInOne">All-in-One (Todo en uno)</option>
+                </select>
+
+                <label for="marca">Marca y Modelo:</label>
+                <input type="text" id="marca" name="marca" placeholder="Ej. HP Pavilion 15">
+
+                <label for="so">Sistema Operativo:</label>
+                <select id="so" name="so">
+                    <option value="Windows 11">Windows 11</option>
+                    <option value="Windows 10">Windows 10</option>
+                    <option value="macOS">macOS</option>
+                    <option value="Linux">Linux</option>
+                    <option value="Otro">Otro / Desconocido</option>
+                </select>
+            </fieldset>
+
+            <!-- SECCIÓN 3: CUESTIONARIO DE DIAGNÓSTICO -->
+            <fieldset>
+                <legend>3. Cuestionario de la Falla</legend>
+
+                <p><strong>¿El equipo enciende al presionar el botón de encendido?</strong></p>
+                <label class="opcion"><input type="radio" name="enciende" value="si" required> Sí, enciende normalmente</label>
+                <label class="opcion"><input type="radio" name="enciende" value="no"> No enciende nada</label>
+                <label class="opcion"><input type="radio" name="enciende" value="a_veces"> Enciende pero se apaga solo al poco tiempo</label>
+
+                <p><strong>Selecciona los síntomas que presenta la computadora:</strong></p>
+                <label class="opcion"><input type="checkbox" name="sintomas" value="lenta"> Lentitud al abrir programas</label>
+                <label class="opcion"><input type="checkbox" name="sintomas" value="ruido"> Ruidos extraños (ventilador o disco)</label>
+                <label class="opcion"><input type="checkbox" name="sintomas" value="pantalla_azul"> Pantalla azul de error</label>
+                <label class="opcion"><input type="checkbox" name="sintomas" value="virus"> Ventanas emergentes o posible virus</label>
+                <label class="opcion"><input type="checkbox" name="sintomas" value="liquido"> Sufrió un golpe o derrame de líquido</label>
+
+                <label for="detalles">Descripción detallada del problema:</label>
+                <textarea id="detalles" name="detalles" rows="4" placeholder="Describe brevemente qué sucedió antes o durante la falla..."></textarea>
+            </fieldset>
+
+            <!-- BOTONES -->
+            <div class="botones">
+                <button type="submit">Enviar Cuestionario</button>
+                <button type="reset">Limpiar Formulario</button>
+            </div>
+
+        </form>
+    </main>
+
+    <!-- 4. FOOTER / PIE DE PÁGINA -->
+    <footer>
+        <p>&copy; 2026 Soporte Técnico de Equipo de Cómputo - Práctica 8</p>
+        <p>Contacto: contacto@soportetecnico.com | Teléfono: 555-123-4567</p>
+    </footer>
+
+</body>
+</html>
